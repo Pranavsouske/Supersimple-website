@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogma's Surprise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffccff; /* Pink background */
+            color: #333;
+        }
+        header {
+            background-color: #333; /* Black header */
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .question {
+            background-color: #fff; /* White background */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #333; /* Black button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555; /* Darker black on hover */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hey Yogma!</h1>
+        <p>Here's a little surprise for you!</p>
+    </header>
+
+    <main>
+        <div class="question" id="firstQuestion">
+            <h2>Itni Busy Kyu Rehti Tu?</h2>
+            <button onclick="nextQuestion('Sorry Bhai')">Sorry Bhai</button>
+            <button onclick="nextQuestion('Sorry yarr')">Sorry yarr</button>
+        </div>
+
+        <div class="question" id="secondQuestion" style="display: none;">
+            <h2>Will you do it again Yogma?</h2>
+            <button onclick="finalAnswer('No')">No</button>
+            <button onclick="finalAnswer('Never lol')">Never lol</button>
+        </div>
+
+        <div id="finalMessage" style="display: none;">
+            <h2>Thank you for playing, Yogma!</h2>
+            <p>We hope you enjoyed this little surprise!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Yogma's Surprise. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function nextQuestion(answer) {
+            document.getElementById('firstQuestion').style.display = 'none';
+            document.getElementById('secondQuestion').style.display = 'block';
+        }
+
+        function finalAnswer(answer) {
+            document.getElementById('secondQuestion').style.display = 'none';
+            document.getElementById('finalMessage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
